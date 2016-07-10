@@ -1,0 +1,56 @@
+
+<!--<div class="">-->
+    <!--<h1>{{results.title}}</h1>-->
+    <!--<img ng-src="{{results.images.large}}" alt="{{results.title}}"/>-->
+    <!--<h3 style="font-weight: 700">电影简介：</h3>-->
+    <!--<p>{{results.summary}}</p>-->
+<!--</div>-->
+
+
+
+
+<div class="jumbotron" ng-if="!loadingImg">
+    <h1>《{{results.title}}》</h1>
+    <div class="media">
+        <div class="media-left">
+            <a href="#">
+                <img class="media-object" ng-src="{{results.images.large}}" alt="{{results.title}}">
+            </a>
+        </div>
+        <div class="media-body">
+            <h2 class="media-heading">电影简介：</h2>
+            <p>{{results.summary}}</p>
+            <p>主演：<span ng-repeat="d in results.casts">
+                {{d.name}}
+            </span></p>
+        </div>
+    </div>
+</div>
+
+<div class="loading-img" ng-if="loadingImg">
+    <img src="loading.gif" alt=""/>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

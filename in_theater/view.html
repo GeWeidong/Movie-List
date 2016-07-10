@@ -1,0 +1,84 @@
+<h1 class="page-header">正在热映的电影-北京</h1>
+<div id="thearter">
+
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="item in subjects">
+            <span class="badge">评分:{{item.rating.average}}</span>
+            <div class="media">
+                <div class="media-left">
+                    <a href="#/detail/{{item.id}}">
+                        <img class="media-object" ng-src="{{item.images.small}}" alt="{{item.title}}">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading" style="color:coral">{{item.title}}</h4>
+
+                    <p>导演：<span ng-repeat="peo in item.directors">
+                        {{peo.name+(!$last ? ' , ':'')}}
+                    </span>
+                    </p>
+                    <p>主演：<span ng-repeat="act in item.casts">
+                        {{act.name+(!$last ? ' , ':'')}}
+                    </span>
+                    </p>
+                    <p>
+                        类型：<span style="font-weight: bold">{{item.genres.join(',')}}</span>
+                    </p>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="loading-img" ng-if="loadingImg">
+        <img src="loading.gif" alt=""/>
+
+    </div>
+
+</div>
+<nav ng-if="!loadingImg">
+    <ul class="pager">
+        <li ng-class="{disabled:currentpage < 2}"><a href="javascript:;" ng-click="go(currentpage - 1);">《 上一页</a></li>
+        <li ng-class="{disabled:currentpage > totalpages-1}"><a href="javascript:;" ng-click="go(currentpage + 1);">下一页 》</a></li>
+    </ul>
+    <P>总共有：{{totalcount}}条电影记录，第{{currentpage}}/{{totalpages}}页</P>
+
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
